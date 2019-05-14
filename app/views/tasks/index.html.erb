@@ -1,2 +1,15 @@
- <h1>Pages#task</h1>
-<p>Find me in app/views/pages/task.html.erb</p>
+
+<h1>My tasks</h1>
+<form>
+  <% @tasks.each do |task| %>
+    <% if task.completed %>
+      <input type="checkbox" checked ><%= link_to task.title, task_path(task) %><br>
+      <% else %>
+      <input type="checkbox"><%= link_to task.title, task_path(task) %><br>
+    <% end %>
+  <% end %>
+</form>
+
+
+
+
